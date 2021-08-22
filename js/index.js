@@ -114,10 +114,7 @@ function populate(event) {
 	let isSymbol = (value) => ['/', '*', '-', '+'].includes(value);
 	let value = event.target['value'];
 	if (isSymbol(value)) {
-		if (
-			isSymbol(displayValue[displayValue.length - 2]) ||
-			displayValue[displayValue.length - 1] == '.'
-		) {
+		if (isSymbol(displayValue[displayValue.length - 2])) {
 			displayValue = displayValue.substring(0, displayValue.length - 3);
 		}
 
@@ -136,6 +133,7 @@ function populate(event) {
 		}
 		if (!hasDecimal) {
 			displayValue += '.';
+			if (evaluated === true) evaluated = false;
 		}
 	} else {
 		if (evaluated === true) {
