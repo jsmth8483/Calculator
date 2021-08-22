@@ -9,6 +9,14 @@ body {
 
 body {
 	position: relative;
+	background-color: #334756;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.5em;
+	color: #eeeeee;
+	margin: 20px;
 }
 
 .container {
@@ -24,7 +32,9 @@ body {
 	height: 50px;
 	margin: 10px 0;
 	line-height: 50px;
+	background-color: #eeeeee;
 	border: 1px solid rgba(102, 102, 102, 0.5);
+	box-shadow: 2px 2px 5px black;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -39,13 +49,36 @@ body {
 .calc-buttons {
 	display: grid;
 	grid-template-columns: 100px 100px 100px 100px;
-	grid-template-rows: 100px 100px 100px 100px;
+	grid-template-rows: 100px 100px 100px 100px 100px;
 	grid-gap: 5px;
 }
 
 .calc-buttons button {
 	border-radius: 0;
-	border: none;
+	border: 1px solid black;
 	font-family: inherit;
 	font-size: 1em;
+	color: white;
+	box-shadow: 2px 2px 10px rgb(0, 0, 0);
+	transition: box-shadow 0.1s;
+}
+
+.number,
+.decimal,
+.operator {
+	background-color: #476072;
+}
+
+.calc-buttons button:active {
+	box-shadow: none;
+}
+
+.calc-buttons button.clear {
+	grid-column: 3/4;
+}
+
+.backspace,
+.equals,
+.clear {
+	background-color: #548ca8;
 }
